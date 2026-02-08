@@ -16,17 +16,20 @@ export function useAIField() {
       setError(null);
       setResult(null);
 
-      const response = await fetch("http://localhost:3001/ai/improve/stream", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/ai/improve/stream`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            text,
+            fieldLabel,
+            tone,
+          }),
         },
-        body: JSON.stringify({
-          text,
-          fieldLabel,
-          tone,
-        }),
-      });
+      );
 
       if (!response.body) {
         throw new Error("ReadableStream not supported in this browser");
