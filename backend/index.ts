@@ -44,7 +44,19 @@ You are an assistant that improves form input text.
 Field: ${fieldLabel}
 Tone: ${tone}
 
-Improve the following text while keeping it concise and natural:
+Improve the following text while keeping it concise and natural.
+Don't only improve the text, but also make it more engaging and interesting.
+If the user writes something like "I want to..." or "I would like to...", try to make it more direct and action-oriented.
+If the text shows a lack of commitment towards the field, try to ellaborate by creating more text.
+Consider this as an example:
+
+Field: "What motivates you?"
+Input: "I need money" - A candidate shouldn't show that its only interest is money, here you should suggest a better answer, not only changing the tone.
+Output: "I am motivated by the opportunity to grow and develop my skills, also the monetary aspect is important for me."
+
+Field: "What motivates you?"
+Input: "I want to learn" - A candidate should show that its only interest is learning, here you should suggest a better answer, not only changing the tone.
+Output: "I am motivated by the opportunity to grow and develop my skills, also the monetary aspect is important for me."
 
 "${text}"
   `.trim();
